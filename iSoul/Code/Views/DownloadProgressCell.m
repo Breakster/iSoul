@@ -124,6 +124,8 @@
 					}
 					case tfRemoteError:
 					case tfLocalError:
+                 case tfConnectionClosed:
+                 case tfCannotConnect:
 					{
 						if (state != tfTransferring) {
 							state = tfRemoteError;
@@ -137,6 +139,7 @@
 					case tfInitiating:
 					case tfGettingStatus:
 					case tfGettingAddress:
+                 case tfConnecting:
 					{
 						if ((state >= tfQueuedLocally) || 
 							(state == tfQueuedRemotely) ||
@@ -174,8 +177,8 @@
 						break;
 					}
 				}
-			}
-		}
+			} // if (![child isFolder])
+		} // for (PathNode *child in [node children])
 		
 	} else {
 		Transfer *transfer = node.representedObject;
