@@ -124,8 +124,8 @@
 					}
 					case tfRemoteError:
 					case tfLocalError:
-                 case tfConnectionClosed:
-                 case tfCannotConnect:
+                    case tfConnectionClosed:
+                    case tfCannotConnect:
 					{
 						if (state != tfTransferring) {
 							state = tfRemoteError;
@@ -139,7 +139,7 @@
 					case tfInitiating:
 					case tfGettingStatus:
 					case tfGettingAddress:
-                 case tfConnecting:
+                    case tfConnecting:
 					{
 						if ((state >= tfQueuedLocally) || 
 							(state == tfQueuedRemotely) ||
